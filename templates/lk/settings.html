@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../media/static/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Настройки</title>
+</head>
+<body>
+<form action="{% url 'lk:wait' user_login %}" method="POST">
+    {% csrf_token %}
+
+    <header class="header">
+        <div class="container">
+            <div class="row header__inner">
+                <a href="{% url 'lk:index' user_login %}" class="header__back"><img src="../../media/static/img/header/Back%20Icon.svg" alt="back Icon"></a>
+                <div class="header__title">Настройки</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="reviews">
+        <div class="container">
+            <div class="row reviews__inner">
+                <label class="reviews__title"> Новый Пароль</label>
+                <input type="text" name="password0u" class="form__input password" id="validationTooltip02" placeholder="Старый Пароль" required>
+                <label class="reviews__title">Повторите новый пароль</label>
+                <input type="text" name="password1u" class="form__input passwordReset" id="validationTooltip02" placeholder="Новый Пароль" required>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="bttnNext">
+        <div class="container">
+            <div class="row reviewsBttn__inner">
+                <button type="submit" class="reviews__button"><div class="reviews__bttnText">Применить</div></button>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

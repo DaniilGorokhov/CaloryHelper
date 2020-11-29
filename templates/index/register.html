@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../media/static/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Регистрация</title>
+</head>
+<body>
+<form action="{% url 'index:new' 0 %}" method="POST">
+    <header class="header">
+        <div class="container">
+            <div class="row header__inner">
+                <a href="{% url 'index:index' %}" class="header__back"><img src="../../media/static/img/header/Back%20Icon.svg" alt="back Icon"></a>
+                <div class="header__title">Регистрация</div>
+            </div>
+        </div>
+    </header>
+
+    {% csrf_token %}
+
+    <div class="form">
+        <div class="container">
+            <div class="row form__inner">
+
+                <div class="form__name">Имя</div>
+                <input type="text" name="loginu" class="form__input login" id="validationTooltip01" placeholder="Введите имя" required/>
+
+                <div class="form__name">Пароль</div>
+                <input type="text" name="password0u" class="form__input password" id="validationTooltip02" placeholder="Пароль" required>
+                <div class="form__name">Повторите Пароль</div>
+                <input type="text" name="password1u" class="form__input password" id="validationTooltip02" placeholder="Повторите пароль" required>
+
+                <div class="form__name">Добавить фотографию для профиля</div>
+                <div class="form__inputPhoto">
+                    <input type="file" name="file" id="file" class="inputfile" accept="image/*">
+                    <label class="form__photo" for="file"><span>Добавить фотографию</span></label>
+                </div>
+{#                <div class="form-group">#}
+{#                    <div class="custom-control custom-checkbox mb-3">#}
+{#                        <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>#}
+{#                        <label class="custom-control-label user_sel" for="customControlValidation1">Нажимая «Зарегистрироваться», вы подтверждаете, что ознакомлены с <a href="incorrect_password.html"><strong>Правилами</strong></a>, и согласны на обработку своих персональных данных.</label>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+            {% block incorrect_data %}{% endblock %}
+        </div>
+    </div>
+
+
+    <div class="bttnNext">
+        <div class="container">
+            <div class="row reviewsBttn__inner">
+                <button type="submit" href="#" class="reviews__button"><div class="reviews__bttnText">Далее</div></button>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+{#<div class="collapse multi-collapse" id="multiCollapseExample2">#}
+{#<div class="card card-body container" style="width: 50%">#}
+{#<form action="{% url 'index:new' 1 %}" method="POST">#}
+{##}
+{#        {% csrf_token %}#}
+{##}
+{#    <div>#}
+{#        <div class="form-column row justify-content-center">#}
+{#            <div class="col-8 col-md-6">#}
+{#                <input type="text" name="title" class="form-control mb-2" id="validationTooltip01" placeholder="Название компании" required/>#}
+{#                <input type="text" name="login" class="form-control mb-2" id="validationTooltip01" placeholder="Логин" required/>#}
+{#                <input type="text" name="password0" class="form-control mb-2" id="validationTooltip02" placeholder="Пароль" required>#}
+{#                <input type="text" name="password1" class="form-control mb-2" id="validationTooltip02" placeholder="Повторите пароль" required>#}
+{#                <div class="form-group"><div class="custom-control custom-checkbox mb-3">#}
+{#                    <input type="checkbox" class="custom-control-input" id="customControlValidation2" required>#}
+{#                    <label class="custom-control-label user_sel" for="customControlValidation2">Нажимая «Зарегистрироваться», вы подтверждаете, что ознакомлены с <a href="incorrect_password.html"><strong>Правилами</strong></a>, и согласны на обработку своих персональных данных.</label>#}
+{#                </div></div>#}
+{#                <button class="btn btn-outline-danger btn-block mb-2" type="submit">Зарегистрироваться</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</form>#}
+{#<div class="row" style="justify-items: stretch">#}
+{#    <button class="btn btn-link col" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Сотрудник компании?</button>#}
+{#    <button class="btn btn-link col">Есть аккаунт?</button>#}
+{#</div>#}
+{#</div>#}
+{#</div>#}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

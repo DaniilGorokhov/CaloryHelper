@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../media/static/css/main.css">
+    <link rel="stylesheet" href="../../media/static/fonts.css">
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ user_login }}</title>
+</head>
+<body>
+{{ fileName }}
+<main>
+	<div class="container">
+		<div class="row main__inner">
+			<div class="main__title">Добро пожаловать, <br> {{ user_instance.login }}!</div>
+		</div>
+	</div>
+</main>
+
+<div class="makePhoto">
+	<div class="container">
+		<div class="row makePhoto__inner">
+			<div class="col-12 makePhoto__title">Добавить новый продукт</div>
+			<a href="{% url 'lk:newPhoto' user_login %}" class="makePhoto__button">
+				<div class="makePhoto__buttonTitle">Сделай фотографию</div>
+				<div class="makePhoto__buttonSubtitle">того, что ты ешь, а мы сами все поймем</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+<div class="journal">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 makePhoto__title">Журнал</div>
+			<div class="col-6 journal__inner journal__left">
+				<a href="{% url 'lk:view_history' user_login %}" class="journal__item">
+					<div>
+						<img src="../../media/static/img/main/historyAvatar.svg" alt="icon of this button" class="journal__icon">
+					</div>
+					<div class="journal__text">История</div>
+					<div class="journal__subtext">Посмотри что ты ел</div>
+				</a>
+			</div>
+
+			<div class="col-6 journal__inner journal__right disabled">
+				<a class="journal__item">
+					<div>
+						<img src="../../media/static/img/main/goalAvatar.svg" alt="icon of this button" class="journal__icon">
+					</div>
+					<div class="journal__text">Цели</div>
+					<div class="journal__subtext">Сделай себя лучше</div>
+				</a>
+			</div>
+
+			<div class="col-6 journal__inner journal__left">
+				<a href="{% url "lk:settings" user_login%}" class="journal__item">
+					<div>
+						<img src="../../media/static/img/main/settingsAvatar.svg" alt="icon of this button" class="journal__icon">
+					</div>
+					<div class="journal__text">Настройки</div>
+					<div class="journal__subtext">Сделай все по себя</div>
+				</a>
+			</div>
+
+			<div class="col-6 journal__inner journal__right disabled">
+				<a class="journal__item">
+					<div>
+						<img src="../../media/static/img/main/feddbackAvatar.svg" alt="icon of this button" class="journal__icon">
+					</div>
+					<div class="journal__text">Обратная связь</div>
+					<div class="journal__subtext">Сделай нас лучше</div>
+				</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{##}
+{#    <div class="row container">#}
+{#        <div class="col"><h5><strong>My profile</strong></h5></div>#}
+{#        <div class="col-4"><h5>{{ user_instance.login }}</h5></div>#}
+{#    </div>#}
+{#    <div class="collapse show multi-collapse" id="multiCollapseExample1">#}
+{#        <div class="card card-body container">#}
+{#                <div class="row">#}
+{#                <button id="switch" class="btn btn-link col" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Notifications</button>#}
+{#            </div>#}
+{#{#            <form action="" method="POST">#}
+{##}
+{#            {% csrf_token %}#}
+{##}
+{#            <div>#}
+{#                <div class="form-column row justify-content-between">#}
+{#                    <div class="col-8">#}
+{#                    <label>ФИО</label>#}
+{#                        <input type="text" name="fio" value="{{ user_instance.fio }}" class="form-control mb-2" id="validationTooltip01" placeholder="ФИО" required/>#}
+{#                        <label>Город</label>#}
+{#                        <input type="text" name="loginu" value="{{ user_instance.town }}" class="form-control mb-2" id="validationTooltip01" placeholder="Город" required/>#}
+{#                        <label>Номер телеофна</label>#}
+{#                        <input type="text" name="phone" value="{{ user_instance.phone }}" class="form-control mb-2" id="validationTooltip01" placeholder="Номер телеофна" required/>#}
+{#                        <label>Опыт работы</label>#}
+{#                        <input type="number" name="points" value="{{ user_instance.experience }}" class="form-control mb-2" id="validationTooltip01" step="1" placeholder="Опыт работы" required/>#}
+{#                        <label>E-mail</label>#}
+{#                        <input type="text" name="email" value="{{ user_instance.email }}" class="form-control mb-2" id="validationTooltip01" placeholder="E-mail" required/>#}
+{#                        <label> Старый Пароль</label>#}
+{#                        <input type="text" name="password0u" class="form-control mb-2" id="validationTooltip02" placeholder="Старый Пароль" required>#}
+{#                    <label> Новый Пароль</label>#}
+{#                        <input type="text" name="password0u" class="form-control mb-2" id="validationTooltip02" placeholder="Новый Пароль" required>#}
+{#                        <label>Повторите новый пароль</label>#}
+{#                        <input type="text" name="password1u" class="form-control mb-2" id="validationTooltip02" placeholder="Повторите новый пароль" required>#}
+{#                        <label>Компания, где вы работаете</label>#}
+{#                        <select name="title_company" class="custom-select" id="validationTooltip04" required>#}
+{#                            {% if list_companies %}#}
+{#                                {% for company in list_companies %}#}
+{#                                    <option value="{{ company.id }}">{{ company.title_company }}</option>#}
+{#                                {% endfor %}#}
+{#                            {% else %}#}
+{#                                <option selected value=":(">Ни одна компания не пользуется нашей платформой</option>#}
+{#                            {% endif %}#}
+{#                        </select>#}
+{#                    <label>Специальность</label>#}
+{#                        <select name="title_company" class="custom-select mb-3" id="validationTooltip04" required>#}
+{#                            {% if list_spec %}#}
+{#                                {% for spec in list_spec %}#}
+{#                                    <option value="{{ spec.id }}">{{ spec.title }}</option>#}
+{#                                {% endfor %}#}
+{#                            {% else %}#}
+{#                                <option selected value=":(">Специальностей нет</option>#}
+{#                            {% endif %}#}
+{#                        </select>#}
+{#                        <button class="btn btn-outline-success btn-block mb-2" type="submit">Сохранить изменения</button>#}
+{#                    </div>#}
+{#                <div class="col justify-content-end">#}
+{#                    <div class="column">#}
+{#                    <div class="col"><img class="img-fluid" src="{{ MEDIA_URL }}{{ ex_image0.image.url }}" alt=""></div>#}
+{#                    <div class="col"><img class="img-fluid" src="{{ MEDIA_URL }}{{ ex_image1.image.url }}" alt=""></div>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            </form>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="collapse multi-collapse" id="multiCollapseExample2">#}
+{#        <div class="card card-body container">#}
+{#            <div class="row" style="justify-items: stretch">#}
+{#                <button  id="switch" class="btn btn-link col" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Edit profile</button>#}
+{#            </div>#}
+{#    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">#}
+{#      <div class="toast-header">#}
+{#        <strong class="mr-auto">Стандартное уведомление</strong>#}
+{#        <small class="text-muted">-20 seconds ago</small>#}
+{#        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">#}
+{#          <span aria-hidden="true">&times;</span>#}
+{#        </button>#}
+{#      </div>#}
+{#      <div class="toast-body">#}
+{#        Добро пожаловать к нам в команду#}
+{#      </div>#}
+{#    </div>#}
+{#        </div>#}
+{#    </div>#}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

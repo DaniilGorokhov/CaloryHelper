@@ -1,0 +1,480 @@
+body {
+    font-family: Roboto, sans-serif;
+    width: 100%;
+}
+
+/*Header---------------------------------------------------------*/
+
+.header__inner {
+    display: flex;
+    margin-left: 0;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    position: relative;
+}
+
+.header__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 75%;
+    color: #2f2f2f;
+
+}
+
+.header__back {
+    position: absolute;
+    left: 0;
+
+}
+
+/* Main -------------------------------------------------------*/
+
+.main__title {
+    font-family: 'Roboto Mono', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    letter-spacing: -0.154px;
+}
+
+.main__inner {
+    margin: 50px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.main__profile-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+
+.main__photo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/*MakePhoto------------------------------------------------------------------*/
+
+.makePhoto {
+    margin-bottom: 50px;
+}
+
+.makePhoto__button {
+    background: linear-gradient(242.23deg, #A0C7FF -17.6%, #448CF2 67.25%);
+    border-radius: 24px;
+    width: 100%;
+    margin: 0 15px;
+    padding: 56px 16px 20px 16px;
+    text-decoration: none;
+}
+
+.makePhoto__button:hover {
+    text-decoration: none;
+}
+
+.makePhoto__button:active {
+    text-decoration: none;
+}
+.makePhoto__icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+
+.makePhoto__buttonTitle {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FFFFFF;
+    margin: 25px 0 15px;
+}
+
+.makePhoto__buttonSubtitle {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    letter-spacing: -0.154px;
+
+    opacity: 0.8;
+
+}
+
+.makePhoto__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.06px;
+    color: #818C99;
+    margin: 0 0 25px;
+    padding-left: 23px;
+}
+
+/*Journal------------------------------------------------*/
+
+.journal__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 14px;
+    padding-left: 23px;
+    letter-spacing: 0.06px;
+    color: #818C99;
+    margin-bottom: 25px;
+}
+
+.journal__item {
+    background: #fff;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    padding: 20px 10px 20px 16px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-flow: column wrap;
+
+}
+
+.journal__item:hover {
+    text-decoration: none;
+}
+
+.journal__item:active {
+    text-decoration: none;
+    background: #e9e8e8;
+}
+
+
+.journal__text {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 18px;
+    color: #2F2F2F;
+    margin: 23px 0 8px 0;
+}
+
+.journal__subtext {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.06px;
+    color: #818C99;
+}
+
+.journal__left {
+    padding-right: 7px;
+}
+
+.journal__right {
+    padding-left: 7px;
+}
+
+
+/*reviews----------------------------------------------------*/
+
+.reviews__inner {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.154px;
+    color: #6D7885;
+    margin: 17px 0 8px;
+}
+
+.reviews__inputField {
+    font-family: Roboto Mono;
+    color: #2F2F2F;
+    width: 100%;
+    height: 102px;
+    padding: 12px;
+    background: #F2F3F5;
+    border-radius: 12px;
+    border: none;
+    overflow: auto;
+    resize: none;
+    outline: none;
+
+}
+
+
+.reviews__button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    text-decoration: none;
+    background: #017AFF;
+    opacity: 0.6;
+    border-radius: 12px;
+
+}
+
+.reviews__button:hover {
+    text-decoration: none;
+}
+
+.reviews__button:active {
+    text-decoration: none;
+}
+
+.reviews__bttnText {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.06px;
+    color: #FFFFFF;
+}
+
+.bttnNext {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+}
+
+.reviewsBttn__inner {
+    margin: 0;
+}
+
+
+/*Form---------------------------------------------------------*/
+
+.form__inner {
+    margin: 10px 0 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__name {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.154px;
+
+    color: #6D7885;
+    margin-bottom: 10px;
+}
+
+.form__input {
+    background: #F2F3F5;
+    border-radius: 12px;
+    color: #3C3C3C;
+    width: 100%;
+    height: 44px;
+    border: none;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.32px;
+    padding: 12px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.form__inputPhoto {
+    position: relative;
+}
+
+.form__photo {
+    z-index: 10;
+    width: 100%;
+    height: 84px;
+    background: #F4F8FF;
+    border: 1px dashed #3F8AE0;
+    border-radius: 10px;
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.32px;
+    color: #3F8AE0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form__photo:hover {
+    cursor: pointer;
+}
+
+#file {
+    /*position: absolute;*/
+    /*z-index: -10;*/
+    /*left: 30px;*/
+    /*top: 20px;*/
+    /*!*overflow: hidden;*!*/
+}
+
+
+.white__bttn {
+    padding: 20px 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.16);
+    border-radius: 12px;
+
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2F2F2F;
+    text-decoration: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.white__bttn:hover {
+    text-decoration: none;
+    color: #2F2F2F;
+}
+
+.white__bttn:active {
+    text-decoration: none;
+    color: #2F2F2F;
+}
+
+/*addPhoto------------------------------------------------*/
+
+.addPhoto__inner {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+}
+
+.addPhoto__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+
+    letter-spacing: -0.154px;
+    color: #6D7885;
+    margin: 20px 0;
+
+}
+
+
+/*History-------------------------------------------------------------------------------------*/
+.history {
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.history__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.history__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    letter-spacing: 0.06px;
+    color: #017AFF;
+}
+
+.history__bttn {
+    margin: 0;
+}
+
+/*Choice ---------------------------------------------------------------------*/
+.choice {
+    margin-top: 25px;
+}
+.choice__inner {
+    margin: 0;
+
+}
+
+.choice__bttn {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+.choice__title {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #2F2F2F;
+}
+
+.choice__subtitle {
+    font-family: Roboto Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.06px;
+    color: #818C99;
+}
+
+.disabled {
+    opacity: .6;
+    user-select: none;
+}
+
+.disabled .journal__item:active {
+    background: #FFFFFF;
+}
+
+/*Media ---------------------------------------------------------------*/
+
+@media (max-width: 360px) {
+/*    Journal-----------------------------*/
+    .journal__text {
+        font-size: 14px;
+    }
+
+}
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Зависимость курсов и специальностей</title>
+</head>
+<body>
+    <header class="header container">
+        <div class="row justify-content-between">
+            <div class="col">
+                <img class="img-fluid" src="data:image/png;base64,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">
+            </div>
+            <div class="col align-self-center offset-md-4">
+                <button class="btn btn-link"><a href="{% url 'admin_panel:index' admin_login %}">Список курсов</a></button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            {% if courses_list %}
+                {% for course in courses_list %}
+                    <div class="card col-12 mb-3">
+                        <div class="card-body row">
+                            <h5 class="card-title col">{{ course.title }}</h5>
+                            <a href="{% url 'admin_panel:edit_depends' admin_login course.id %}"><button type="submit" class="btn btn-outline-dark col">Редактировать связь со специальностями</button></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Ни одного курса пока не создано</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

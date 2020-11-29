@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../media/static/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Новое фото</title>
+</head>
+<body>
+
+{% if not foodVariants %}
+    <form action="{% url 'lk:newPhoto' user_login %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <header class="header">
+            <div class="container">
+                <div class="row header__inner">
+                    <a href="{% url 'lk:index' user_login %}" class="header__back">
+                      <img src="../../media/static/img/header/Back%20Icon.svg" alt="back Icon">
+                    </a>
+                    <div class="header__title">Добавление продукта</div>
+                </div>
+            </div>
+        </header>
+      {{ form }}
+
+{#       <div class="container">#}
+{#           <div class="row addPhoto__inner">#}
+{#               <div class="addPhoto__title">Добавить фотографию</div>#}
+{#               <div class="form__inputPhoto">#}
+{#                   <input required type="file" name="file" id="file" class="inputfile">#}
+{#                   <label class="form__photo" for="file"><span>Добавить фотографию</span></label>#}
+{#               </div>#}
+{#           </div>#}
+{#       </div>#}
+
+        <div class="bttnNext">
+            <div class="container">
+                <div class="row reviewsBttn__inner">
+                    <button type="submit" class="reviews__button">
+                      <div class="reviews__bttnText">Далее</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% else %}
+    <form action="{% url 'lk:view_history' user_login %}" method="post">
+    {% csrf_token %}
+    <div class="choice">
+        <div class="container">
+            <div class="row choice__inner">
+                {% for food in foodVariants %}
+                    <a class="white__bttn choice__bttn" href="{% url 'lk:chooseFood' user_login food.foodName food.foodDescription %}">
+                        <span class="choice__title">{{ food.foodName }}</span>
+                        <span class="choice__subtitle">{{ food.foodDescription }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="bttnNext">
+        <div class="container">
+            <div class="row reviewsBttn__inner">
+                <button type="submit" class="reviews__button"><div class="reviews__bttnText">Мы не угадали?</div></button>
+            </div>
+        </div>
+    </div>
+    </form>
+{% endif %}
+</body>
+</html>

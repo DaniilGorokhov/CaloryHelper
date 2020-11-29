@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../media/static/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Вход в личный кабинет</title>
+</head>
+<body>
+<form action="{% url 'index:auth' %}" method="POST">
+    <header class="header">
+        <div class="container">
+            <div class="row header__inner">
+                <div class="header__title">Войти</div>
+            </div>
+        </div>
+    </header>
+
+        {% csrf_token %}
+
+    <div class="form">
+        <div class="container">
+            <div class="row form__inner">
+                <div class="form__name">Имя</div>
+                <input type="text" name="login" class="form__input login" id="validationTooltip01" placeholder="Логин" required/>
+
+                <div class="form__name">Пароль</div>
+                <input type="password" name="password" class="form__input password" id="validationTooltip02" placeholder="Пароль" required>
+            </div>
+            {% block incorrect_data %}{% endblock %}
+        </div>
+    </div>
+
+
+
+    <div class="bttnNext">
+        <div class="container">
+            <div class="row reviewsBttn__inner">
+                <a class="white__bttn" href="{% url 'index:register' %}">Зарегистрироваться</a>
+                <button type="submit" href="#" class="reviews__button"><div class="reviews__bttnText">Далее</div></button>
+            </div>
+        </div>
+    </div>
+
+    </form>
+</body>
+</html>

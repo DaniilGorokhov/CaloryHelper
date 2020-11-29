@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../media/static/css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>История</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row header__inner">
+                <a href="{% url "lk:index" user_login %}" class="header__back"><img src="../../media/static/img/header/Back%20Icon.svg" alt="back Icon"></a>
+                <div class="header__title">История</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="choice">
+        <div class="container">
+            <div class="row choice__inner">
+            {% if history %}
+                {% for food in history %}
+                    <div class="white__bttn choice__bttn">
+                        <span class="choice__title">{{ food.foodName }}</span>
+                        <span class="choice__subtitle">{{ food.foodDescription }}</span>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <div class="history">
+                    <div class="row history__inner">
+                        <div class="history__icon">
+                            <img src="img/history/history__icon.svg" alt="icon">
+                        </div>
+                        <div class="history__title">Сделайте фотографию, <br> а мы сами поймем что ты ешь</div>
+                    </div>
+                </div>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+    {% if not  history %}
+        <div class="bttnNext">
+            <div class="container">
+                <div class="row reviewsBttn__inner">
+                    <a class="white__bttn history__bttn" href="{% url 'lk:index' user_login %}">Сделать фотографию</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</body>
+</html>
