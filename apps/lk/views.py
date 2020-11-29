@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponseRedirect
 from django.urls import reverse
 from apps.index.models import User, UserHistory
-from apps.admin_panel.models import Course
 from sova_avia.settings import MEDIA_ROOT
 
 from imageai.Prediction import ImagePrediction
@@ -90,52 +89,3 @@ def chooseFood(request, user_login, foodName, foodDescription):
     return HttpResponseRedirect(reverse('lk:index', args=(user_login,)))
 
 
-# def upload_image(request, user_login):
-#     if request.method == 'POST':
-#         form = ArticleForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect('/')
-#     else:
-#         form = ArticleForm()
-#
-#     return render(request, 'lk/newPhoto.html', {'form': form})
-
-# def upload_image(request, user_login):
-#     # Document.objects.create(doc_file)
-#     form = UploadFileForm(request.POST, request.FILES)
-#     if form.is_valid():
-#         handle_uploaded_file(request.FILES['file'])
-#         return render(request, 'lk/list.html', {'form': form, 'user_login': user_login})
-#     else:
-#         form = UploadFileForm()
-#     return render(request, 'lk/newPhoto.html', {'form': form, 'user_login': user_login})
-#     # return render(request, 'lk/list.html', {'files': request.FILES['file'], 'user_login': user_login})
-#
-#
-# def handle_uploaded_file(f):
-#     destination = open('some/file/name.txt', 'wb+')
-#     for chunk in f.chunks():
-#         destination.write(chunk)
-#     destination.close()
-    # if request.method == 'POST':
-    #     form = DocumentForm(request.POST, request.FILES)
-    #     if form.is_valid():
-    #         new_doc = Document(docfile=request.FILES['file'])
-    #         new_doc.save()
-    #
-    #         # Redirect to the document list after POST
-    #         return HttpResponseRedirect(reverse('lk:upload_image', args=(user_login,)))
-    # else:
-    #     form = DocumentForm()  # A empty, unbound form
-    #
-    # # Load documents for the list page
-    # documents = Document.objects.all()
-    #
-    # # Render list page with the documents and the form
-    # return render_to_response(
-    #     'lk/list.html',
-    #     {'documents': documents, 'form': form, 'user_login': user_login},
-    #       context_
-    # )
-    # return HttpResponseRedirect(reverse('lk:index', args=(user_login,)))
