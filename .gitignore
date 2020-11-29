@@ -8,13 +8,8 @@ pythonAI/resnet50_coco_best_v2.0.1.h5
 pythonAI/134.jpg
 media/media/330431.jpg
 
-PythonGateway-Template/.idea
-PythonGateway-Template/.vscode
-PythonGateway-Template/pythonAI/venv
-PythonGateway-Template/pythonAI/meta
-PythonGateway-Template/pythonAI/products
-PythonGateway-Template/pythonAI/134.jpg
-PythonGateway-Template/pythonAI/resnet50_coco_best_v2.0.1.h5
-PythonGateway-Template/src/resnet50_weights_tf_dim_ordering_tf_kernels.h5
+.vscode
+meta
+products
 
 ml
