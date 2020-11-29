@@ -40,3 +40,7 @@ python manage.py runserver
 ## Using
 
 You should sign up in our service, than you can get inforamtion about calory amount in your nutrition by uploading photo and clarifying product name. Further in your history you can see your history in time
+
+
+There are test images in directory testImages for fast testing
+
