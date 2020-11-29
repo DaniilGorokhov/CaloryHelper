@@ -1,7 +1,12 @@
 # CaloryHelper
 
+## Description
+
 This is service for establishing amount of calory in product.
-For start local version, you need:
+
+## Starting project
+
+For starting local version, you need:
 
 *Start virtual environment
 Windows:
@@ -13,6 +18,7 @@ MacOS:
 python3 -m venv venv
 ```
 
+*Activate virtual environment
 ```
 call venv/Scripts/activate
 ```
@@ -30,3 +36,7 @@ python manage.py runserver
 ```
 
 *Go to your browser for test application by adrress http://localhost:8000
+
+## Using
+
+You should sign up in our service, than you can get inforamtion about calory amount in your nutrition by uploading photo and clarifying product name. Further in your history you can see your history in time
