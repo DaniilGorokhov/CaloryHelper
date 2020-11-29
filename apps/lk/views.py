@@ -5,7 +5,7 @@ from apps.index.models import User, UserHistory
 from sova_avia.settings import MEDIA_ROOT
 
 from imageai.Prediction import ImagePrediction
-import os
+import json
 
 from .models import Article
 from .forms import ArticleForm
@@ -67,6 +67,9 @@ def newPhoto(request, user_login):
 def process_image(file_name):
     execution_path = "../../media/media/"
 
+    with open(MEDIA_ROOT + '/media/' + 'foods.json') as f:
+        foods = json.load(f)
+
     prediction = ImagePrediction()
     prediction.setModelTypeAsResNet()
     prediction.setModelPath(MEDIA_ROOT + "/media/resnet50_weights_tf_dim_ordering_tf_kernels.h5")
@@ -77,9 +80,22 @@ def process_image(file_name):
     predictions, probabilities = prediction.predictImage(MEDIA_ROOT + '/media/' + str(file_name), result_count=10)
     for eachPrediction, eachProbability in zip(predictions, probabilities):
         tmp = dict()
+        eachPrediction = eachPrediction.replace('_', ' ')
+
         tmp['foodName'] = eachPrediction
         tmp['foodDescription'] = eachProbability
-        result.append(tmp)
+        calorieAmount = "124 cal"
+
+        flag = False
+        for food in foods:
+            if food['foodName'] == eachPrediction:
+                calorieAmount = food['foodDescription']
+                flag = True
+                break
+
+        if flag:
+            tmp['foodDescription'] = calorieAmount
+            result.append(tmp)
 
     return result
 
