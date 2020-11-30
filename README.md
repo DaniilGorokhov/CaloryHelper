@@ -46,6 +46,6 @@ There are test images in directory testImages for fast testing
 
 
 Who work on this project:
-*Frontend - https://github.com/Grekov-Igor
-*Backend - https://github.com/SeamMiner
-*AI and Parsing - https://github.com/DaniilGorokhov
+* Frontend - https://github.com/Grekov-Igor
+* Backend - https://github.com/SeamMiner
+* AI and Parsing - https://github.com/DaniilGorokhov
